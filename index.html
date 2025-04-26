@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Women Safety App</title>
+    
+    <style>body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("https://archive.factordaily.com/wp-content/uploads/2017/03/Womens_safety-_app_leadimage.jpg")
+        no-repeat center center fixed;
+      background-size: cover; 
+      color: #ffffff; 
+    }
+    
+    /* Heading Section */
+    .heading {
+      text-align: center;
+      background: url("https://png.pngtree.com/thumb_back/fw800/background/20240106/pngtree-vibrant-red-texture-crumpled-paper-ideal-for-your-design-project-image_13818506.png")
+        no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      padding: 20px 0;
+    }
+    
+    .heading h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #f6f6f6; 
+      text-shadow:
+      10px 10px 20px red,
+      0 0 1em rgb(255, 0, 0),
+      0 0 0.2em rgb(157, 255, 0);
+    }
+    
+    .heading h2 {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #ffffff; 
+      text-shadow: red 2px 4px;}
+    
+    
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: url("https://tse4.mm.bing.net/th?id=OIP.vHDgErSogrllPhDCHCRwtQHaE8&pid=Api&P=0&h=180"); 
+      text-shadow: rgb(0, 255, 4) 1px 0 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    
+    button {
+      background-color: #fc6457;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #33fd00b5;
+    }
+    
+    /* Form Styles */
+    #formContainer {
+      margin-top: 20px;
+      text-align: left;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    
+    form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    
+    form button {
+      width: 100%;
+    }
+    
+    /* Location Indicator */
+    #locationIndicator {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #fff;
+    }
+    
+    #trackingStatus {
+      font-weight: bold;
+      color: #14f11b;
+    }
+    
+    .alert {
+      background-color: #ffcc00;
+      color: #333;
+      padding: 10px;
+      border: 1px solid #ff9900;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    .error {
+      background-color: #ffcccc;
+      color: #d8000c;
+      padding: 10px;
+      border: 1px solid #d8000c;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    #callPoliceButton {
+      background-color: #ff5242; /* Red color for emergency */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    #callPoliceButton:hover {
+      background-color: #6dd833d3;
+    }
+    
+    
+    </style>
+  </head>
+  <body background= 
+  "https://archive.factordaily.com/wp-content/uploads/2017/03/Womens_safety-_app_leadimage.jpg">
+    
+    <div class="heading">
+      <h1>Hey,User</h1>
+      <h2>"Safety is not a privilege, it's a right."</h2>
+    </div>
+    <div class="container">
+      <h1>Women's Security Companion</h1> `
+
+      <button id="alertButton">Send Emergency Alert</button>
+      <button id="startTrackingButton">Start Location Tracking</button>
+      <button id="stopTrackingButton" style="display: none;">Stop Location Tracking</button>
+      <button id="callPoliceButton">"Request police assistance."</button>
+      <div id="formContainer" style="display: none">
+        <h2>Enter Your Details</h2>
+        <form id="safetyForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+          <label for="phone"> Enter your phone number: </label>
+          <input type="tel" id="phone" name="phone" required />
+          <label for="location">Location:</label>
+          <input type="text" id="location" required />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="locationIndicator" style="display: none">
+        <p>Location Tracking: <span id="trackingStatus">Inactive</span></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67e79471eebe80190cb41445/1ing9nncd';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+        
+  </body>
+  <script>let watchId;
+
+    // Event listener for the SOS alert button
+    document.getElementById("alertButton").addEventListener("click", function () {
+      document.getElementById("formContainer").style.display = "block";
+    });
+    
+    // Event listener for the Start Location Tracking button
+    document
+      .getElementById("startTrackingButton")
+      .addEventListener("click", function () {
+        startTrackingLocation();
+        document.getElementById("startTrackingButton").style.display = "none";
+        document.getElementById("stopTrackingButton").style.display =
+          "inline-block";
+      });
+    
+    // Event listener for the Stop Location Tracking button
+    document
+      .getElementById("stopTrackingButton")
+      .addEventListener("click", function () {
+        stopTrackingLocation();
+        document.getElementById("startTrackingButton").style.display =
+          "inline-block";
+        document.getElementById("stopTrackingButton").style.display = "none";
+      });
+    
+    document
+      .getElementById("safetyForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+    
+        // Stop tracking location when the form is submitted
+        stopTrackingLocation();
+    
+        // Here you would typically send the data to a server or an API
+        alert(`Emergency alert sent!\nName: ${name}\nLocation: ${currentLocation}`);
+    
+        // Reset the form
+        this.reset();
+        document.getElementById("formContainer").style.display = "none";
+      });
+    
+    // Function to start tracking the user's location
+    function startTrackingLocation() {
+      if (navigator.geolocation) {
+        watchId = navigator.geolocation.watchPosition(showPosition, showError);
+        document.getElementById("locationIndicator").style.display = "block";
+        document.getElementById("trackingStatus").textContent = "Active";
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+    
+    // Function to stop tracking the user's location
+    function stopTrackingLocation() {
+      if (watchId) {
+        navigator.geolocation.clearWatch(watchId);
+        document.getElementById("trackingStatus").textContent = "Inactive";
+      }
+    }
+    
+    // Function to show the user's position
+    let currentLocation = "";
+    function showPosition(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      currentLocation = `Latitude: ${latitude}, Longitude: ${longitude}`;
+      console.log(currentLocation); // Log the location for debugging
+    }
+    
+    // Function to handle errors
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for Geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
+      }
+    }
+    function callHelpline() {
+      window.open("tel:1234567890"); // Replace with actual helpline number
+    }
+    window.addEventListener("devicemotion", function (event) {
+      if (event.acceleration.x > threshold || event.acceleration.y > threshold) {
+        sendSOSAlert(); // Trigger SOS on shake
+      }
+    });
+    function checkUnsafeAreas(location) {
+      // Call an API to check if the location is unsafe
+      console.log(`Checking safety for location: ${location}`);
+    }
+    let mediaRecorder;
+    function startRecording() {
+      navigator.mediaDevices
+        .getUserMedia({ audio: true, video: true })
+        .then((stream) => {
+          mediaRecorder = new MediaRecorder(stream);
+          mediaRecorder.start();
+          console.log("Recording started");
+        });
+    }
+    function simulateFakeCall() {
+      alert("Incoming call from Mom!"); // Simulate a call
+      // Additional logic to make it more realistic
+    }
+    function sendSOSAlert() {
+      const contacts = ["contact1@example.com", "contact2@example.com"]; // Pre-selected contacts
+      const message = "Emergency! Please help me.";
+      contacts.forEach((contact) => {
+        // Use an API to send SMS or email
+        console.log(`Sending alert to ${contact}: ${message}`);
+        // Implement actual sending logic here
+      });
+    }
+    
+    document.getElementById("chatButton").addEventListener("click", function () {
+      if (typeof Tawk_API !== "undefined") {
+        Tawk_API.maximize(); // Opens the chat widget
+      } else {
+        alert("Chat service is currently unavailable. Please try again later.");
+      }
+    });
+    
+    document.getElementById("callPoliceButton").addEventListener("click", function () {     
+      window.open("tel:100"); // Opens the phone dialer with the number 100
+    });
+    </script>
+</html>
